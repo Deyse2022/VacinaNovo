@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuaddPessoa"
+        android:icon="@drawable/ic_add_pessoa_24"
+        android:title="Nova Pessoa"
+        app:showAsAction="always"
+        android:iconTint="@color/white"/>
+
+    <item
+        android:id="@+id/menuConfiguracoes"
+        android:icon="@drawable/ic_add_pessoa_24"
+        android:title="Configurações"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menuSair"
+        android:icon="@drawable/ic_add_pessoa_24"
+        android:title="Sair"
+        app:showAsAction="never" />
+</menu>

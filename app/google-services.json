@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "195210054292",
+    "project_id": "app-vacina-cf08c",
+    "storage_bucket": "app-vacina-cf08c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195210054292:android:b1be3662cb7edffd3a0281",
+        "android_client_info": {
+          "package_name": "deyse.souza.appvacina"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195210054292-4g44kr2khc35qlato11uc18q8l1su86e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "deyse.souza.appvacina",
+            "certificate_hash": "07480f309eb782c859a571296aa13175dfe28dc3"
+          }
+        },
+        {
+          "client_id": "195210054292-tc3fgk6qms4l2eaj1bfbkq60aksfp8pa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAjhyqzfeINBq35eVBLTvuZST55PHv-ZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195210054292-tc3fgk6qms4l2eaj1bfbkq60aksfp8pa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
