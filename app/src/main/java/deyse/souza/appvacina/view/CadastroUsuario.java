@@ -58,6 +58,7 @@ public class CadastroUsuario extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Vacina+");
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
         public void validarCadastroUsuario (View view) {
@@ -65,6 +66,8 @@ public class CadastroUsuario extends AppCompatActivity {
             String textoNome = campoNome.getText().toString();
             String textoEmail = campoEmail.getText().toString();
             String textoSenha = campoSenha.getText().toString();
+            String textoEstado = spinnerEstado.getSelectedItem().toString();
+            String textoMunicipio = spinnerMunicipio.getSelectedItem().toString();
 
 
             if (!textoNome.isEmpty()) {
@@ -77,6 +80,8 @@ public class CadastroUsuario extends AppCompatActivity {
                             usuario.setEmail(textoEmail);
                             usuario.setSenha(textoSenha);
                             usuario.setTipo( verificaTipoUsuario() );
+                            usuario.setEstado(textoEstado);
+                            usuario.setMunicipio(textoMunicipio);
 
                             cadastrarUsuario(usuario);
 
@@ -239,5 +244,5 @@ public class CadastroUsuario extends AppCompatActivity {
 
         return super.onCreateOptionsMenu(menu);
     }
-    
+
     }

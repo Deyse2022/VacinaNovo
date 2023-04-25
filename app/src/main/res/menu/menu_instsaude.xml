@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuINovaCampV"
+        android:icon="@drawable/add_campvacina_24"
+        android:title="Nova Campanha Vacinação"
+        app:showAsAction="always"
+        android:iconTint="@color/white"/>
+
+
+    <item
+        android:id="@+id/menuMeuPerfilIS"
+        android:title="Meu Perfil"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menuNotificaoes"
+        android:title="Notificações"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/menuSair"
+        android:title="Sair"
+        app:showAsAction="never" />
+</menu>

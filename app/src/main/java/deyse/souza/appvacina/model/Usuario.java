@@ -1,7 +1,5 @@
 package deyse.souza.appvacina.model;
 
-import android.widget.Spinner;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
@@ -24,7 +22,7 @@ public class Usuario {
 
     public void salvar() {
         DatabaseReference firebase = ConfiguracaoFirebase.getFirebaseDatabase();
-        firebase.child("usuários")
+        firebase.child("usuarios")
                 .child(this.getIdUsuario())
                 .setValue(this);
     }
@@ -47,6 +45,7 @@ public class Usuario {
     public String getEstado() {
         return estado;
     }
+
 
     public void setEstado(String estado) {
         this.estado = estado;

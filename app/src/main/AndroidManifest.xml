@@ -12,6 +12,38 @@
         android:theme="@style/Theme.AppVacina"
         tools:targetApi="31">
         <activity
+            android:name=".view.ListaVacinas"
+            android:exported="false"
+            android:parentActivityName=".view.MainPessoa"/>
+        <activity
+            android:name=".view.NovaCampV"
+            android:exported="false"
+            android:parentActivityName=".view.MainInstSaude" />
+        <activity
+            android:name=".view.AddPessoa"
+            android:exported="false"
+            android:parentActivityName=".view.MainPessoa" />
+        <activity
+            android:name=".view.Notificacoes"
+            android:exported="false"
+            android:parentActivityName=".view.MainInstSaude" />
+        <activity
+            android:name=".view.MeuPerfilIS"
+            android:exported="false"
+            android:parentActivityName=".view.MainInstSaude" />
+        <activity
+            android:name=".view.CampVacinacao"
+            android:exported="false"
+            android:parentActivityName=".view.MainPessoa" />
+        <activity
+            android:name=".view.Lembretes"
+            android:exported="false"
+            android:parentActivityName=".view.MainPessoa" />
+        <activity
+            android:name=".view.MeuPerfilP"
+            android:exported="false"
+            android:parentActivityName=".view.MainPessoa" />
+        <activity
             android:name=".view.MainInstSaude"
             android:exported="false" />
         <activity

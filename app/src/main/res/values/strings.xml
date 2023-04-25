@@ -16,7 +16,7 @@
     <string name="ckLembrar">Lembrar</string>
     <string name="txtRecuperarSenha">Recuperar Senha</string>
     <string name="btnAcessar">Acessar</string>
-    <string name="txtLer"><![CDATA[Ler Política de Privacidade & Termos de Uso.]]></string>
+    <string name="txtLer"><![CDATA[Política de Privacidade & Termos de Uso.]]></string>
     <string name="editSenha">Informe sua senha</string>
     <string name="txtEstado">Estado</string>
     <string name="txtMunicipio">Município</string>
@@ -37,4 +37,6 @@
     <string name="titulo_cadastro">Cadastrar uma conta</string>
     <string name="txtTitulo">Cadastro</string>
     <string name="txtNomes">Nome</string>
+    <string name="txtAddPessoa">Adicionar Pessoa</string>
+    <string name="txtMeuPerfil">Meu Perfil</string>
 </resources>

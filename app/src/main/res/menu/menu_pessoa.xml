@@ -10,14 +10,21 @@
         android:iconTint="@color/white"/>
 
     <item
-        android:id="@+id/menuConfiguracoes"
-        android:icon="@drawable/ic_add_pessoa_24"
-        android:title="Configurações"
+        android:id="@+id/menuMeuPerfil"
+        android:title="Meu Perfil"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menuLembretes"
+        android:title="Lembretes"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menuCampVacinacao"
+        android:title="Campanhas de Vacinação"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/menuSair"
-        android:icon="@drawable/ic_add_pessoa_24"
         android:title="Sair"
         app:showAsAction="never" />
 </menu>
