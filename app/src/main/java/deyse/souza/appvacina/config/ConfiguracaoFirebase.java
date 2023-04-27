@@ -22,4 +22,5 @@ public class ConfiguracaoFirebase {
         }
         return auth;
     }
+
 }

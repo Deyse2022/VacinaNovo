@@ -23,6 +23,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 
@@ -35,7 +36,7 @@ import deyse.souza.appvacina.config.ConfiguracaoFirebase;
 import deyse.souza.appvacina.helper.UsuarioFirebase;
 import deyse.souza.appvacina.listener.RecyclerItemClickListener;
 import deyse.souza.appvacina.model.Pessoa;
-import deyse.souza.appvacina.model.Usuario;
+import deyse.souza.appvacina.model.Vacina;
 
 public class MainPessoa extends AppCompatActivity {
 
@@ -49,6 +50,12 @@ public class MainPessoa extends AppCompatActivity {
     private DatabaseReference firebaseRef;
 
     private RecyclerView recyclerPessoas;
+
+    private Vacina vacina;
+
+    private String idPessoaSel;
+
+    private Pessoa pessoaSelecionada;
 
     private String idUsuarioLogado;
 
@@ -70,6 +77,7 @@ public class MainPessoa extends AppCompatActivity {
         toolbar.setTitle("Vacina+");
         setSupportActionBar(toolbar);
 
+
         recyclerPessoas.setLayoutManager(new LinearLayoutManager(this));
         recyclerPessoas.setHasFixedSize(true);
         adapterPessoas = new AdapterPessoas(pessoas, this);
@@ -82,7 +90,11 @@ public class MainPessoa extends AppCompatActivity {
                         new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
                             public void onItemClick(View view, int position) {
-                                startActivity(new Intent(MainPessoa.this, ListaVacinas.class));
+
+                                Pessoa pessoaSelecionada = pessoas.get(position);
+                                Intent i = new Intent(MainPessoa.this, ListaVacinas.class);
+                                i.putExtra("pessoa", pessoaSelecionada);
+                                startActivity(i);
 
                             }
 
@@ -129,7 +141,7 @@ public class MainPessoa extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
 
         switch (item.getItemId()){
-            case R.id.menuaddPessoa:
+            case R.id.menuadeletePessoa:
                 abrirAddPessoa();
                 break;
             case R.id.menuMeuPerfil:
@@ -184,7 +196,7 @@ public class MainPessoa extends AppCompatActivity {
 
         pessoasRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onDataChange(DataSnapshot snapshot) {
                 pessoas.clear();
 
                 for (DataSnapshot ds: snapshot.getChildren()){
@@ -203,10 +215,12 @@ public class MainPessoa extends AppCompatActivity {
         });
 
     }
-    
+
     public void deletePessoa(View view){
         Toast.makeText(getApplicationContext(), "Deletar pessoa",
                 Toast.LENGTH_LONG).show();
     }
+
+
 
 }

@@ -2,25 +2,47 @@ package deyse.souza.appvacina.model;
 
 import com.google.firebase.database.DatabaseReference;
 
+import java.io.Serializable;
+
 import deyse.souza.appvacina.config.ConfiguracaoFirebase;
 
-public class Pessoa {
+public class Pessoa implements Serializable {
 
     private String idUsuario;
+
+    private String idPessoaV;
     private String nome;
     private String dtnasc;
 
     private String status;
 
+
     public Pessoa() {
+
+        DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
+        DatabaseReference pessoaRef = firebaseRef
+                .child("pessoas");
+        setIdPessoaV( pessoaRef.push().getKey() );
+
     }
 
     public void salvar(){
+
         DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
-        DatabaseReference empresaRef = firebaseRef.child("pessoas")
+        DatabaseReference pessoaRef = firebaseRef
+                .child("pessoas")
                 .child(getIdUsuario())
-                .push();
-        empresaRef.setValue(this);
+                .child(getIdPessoaV());
+        pessoaRef.setValue(this);
+    }
+
+
+    public  String getIdPessoaV() {
+        return idPessoaV;
+    }
+
+    public void setIdPessoaV(String idPessoaV) {
+        this.idPessoaV = idPessoaV;
     }
 
     public String getIdUsuario() {

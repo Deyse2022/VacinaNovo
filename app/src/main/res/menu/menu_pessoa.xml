@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/menuaddPessoa"
+        android:id="@+id/menuadeletePessoa"
         android:icon="@drawable/ic_add_pessoa_24"
         android:title="Nova Pessoa"
         app:showAsAction="always"

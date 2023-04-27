@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Informe a data de nascimento"
-            android:inputType="date"
+            android:inputType="text"
             android:padding="16dp" />
 
         <Button
