@@ -1,28 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".view.Notificacoes">
 
     <include
         android:id="@+id/includ3"
         layout="@layout/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-    </include>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="notificaoes"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="290dp" />
+        <TextView
+            android:id="@+id/textNotificacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:shadowColor="#3F51B5"
+            android:text="Notificações"
+            android:textAlignment="center"
+            android:textColor="#3F51B5"
+            android:textSize="36sp"
+            android:textStyle="bold"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textPadRec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Padrão de recorrência" />
+
+        <Spinner
+            android:id="@+id/editspinnerLembrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:padding="16dp" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="A cada" />
+
+        <EditText
+            android:id="@+id/editIntervalo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Informe o intervalo"
+            android:inputType="textPersonName"
+            android:padding="16dp" />
+
+        <TextView
+            android:id="@+id/textInicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Data de inicio" />
+
+        <EditText
+            android:id="@+id/editdtInicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Informe a data de inicio"
+            android:inputType="textPersonName"
+            android:padding="16dp" />
+
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="editNotificacoesSalvar"
+            android:padding="16dp"
+            android:text="Salvar" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

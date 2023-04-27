@@ -6,8 +6,7 @@
         android:id="@+id/menuadeletePessoa"
         android:icon="@drawable/ic_add_pessoa_24"
         android:title="Nova Pessoa"
-        app:showAsAction="always"
-        android:iconTint="@color/white"/>
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/menuMeuPerfil"

@@ -45,33 +45,33 @@ public class Login extends AppCompatActivity {
 
     }
 
-        public void validarLoginUsuario(View view){
+    public void validarLoginUsuario(View view){
 
 
-            String textoEmail = campoEmail.getText().toString();
-            String textoSenha = campoSenha.getText().toString();
+        String textoEmail = campoEmail.getText().toString();
+        String textoSenha = campoSenha.getText().toString();
 
-            if( !textoEmail.isEmpty() ) {
-                if( !textoSenha.isEmpty() ) {
-                    Usuario usuario = new Usuario();
-                    usuario.setEmail( textoEmail );
-                    usuario.setSenha( textoSenha );
+        if( !textoEmail.isEmpty() ) {
+            if( !textoSenha.isEmpty() ) {
+                Usuario usuario = new Usuario();
+                usuario.setEmail( textoEmail );
+                usuario.setSenha( textoSenha );
 
-                    logarUsuario( usuario );
+                logarUsuario( usuario );
 
-                }else{
-                    Toast.makeText(Login.this,
-                            "Preencha a senha!",
-                            Toast.LENGTH_SHORT).show();
-                }
             }else{
                 Toast.makeText(Login.this,
-                        "Preencha o email!",
+                        "Preencha a senha!",
                         Toast.LENGTH_SHORT).show();
             }
-
-
+        }else{
+            Toast.makeText(Login.this,
+                    "Preencha o email!",
+                    Toast.LENGTH_SHORT).show();
         }
+
+
+    }
 
     public void logarUsuario( Usuario usuario ){
 
@@ -108,11 +108,11 @@ public class Login extends AppCompatActivity {
 
     }
 
-        public void lerTermos(View view) {
+    public void lerTermos(View view) {
 
-            Toast.makeText(getApplicationContext(), "Aplicativo em fase de testes!",
-                    Toast.LENGTH_LONG).show();
-        }
+        Toast.makeText(getApplicationContext(), "Aplicativo em fase de testes!",
+                Toast.LENGTH_LONG).show();
+    }
 
     public void abrirTelaCadastro(View view){
         Intent i = new Intent(Login.this, CadastroUsuario.class);
@@ -120,5 +120,3 @@ public class Login extends AppCompatActivity {
     }
 
 }
-
-

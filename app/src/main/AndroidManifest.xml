@@ -12,9 +12,13 @@
         android:theme="@style/Theme.AppVacina"
         tools:targetApi="31">
         <activity
+            android:name=".view.EditaCampanha"
+            android:exported="false"
+            android:parentActivityName=".view.MainInstSaude" />
+        <activity
             android:name=".view.ListaVacinas"
             android:exported="false"
-            android:parentActivityName=".view.MainPessoa"/>
+            android:parentActivityName=".view.MainPessoa" />
         <activity
             android:name=".view.NovaCampV"
             android:exported="false"

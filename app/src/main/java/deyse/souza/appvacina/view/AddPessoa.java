@@ -3,10 +3,7 @@ package deyse.souza.appvacina.view;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.activity.ComponentActivity;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -19,14 +16,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import deyse.souza.appvacina.R;
 import deyse.souza.appvacina.adapter.AdapterPessoas;
-import deyse.souza.appvacina.helper.DateCustom;
 import deyse.souza.appvacina.helper.UsuarioFirebase;
 import deyse.souza.appvacina.model.Pessoa;
-import deyse.souza.appvacina.model.Usuario;
 import deyse.souza.appvacina.model.Vacina;
 
 public class AddPessoa extends AppCompatActivity {
@@ -73,7 +67,7 @@ public class AddPessoa extends AppCompatActivity {
     }
 
     private void inicializarComponntes(){
-        editNomePessoa = findViewById(R.id.editNomePessoa);
+        editNomePessoa = findViewById(R.id.editNomeCampanha);
         editDtNascimento = findViewById(R.id.editDtNascimento);
 
     }

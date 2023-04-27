@@ -15,6 +15,12 @@ public class Usuario {
     private String municipio;
     private String idUsuario;
 
+    private String endereco;
+
+    private String telefone;
+
+    private String horario;
+
 
     public Usuario() {
 
@@ -25,6 +31,30 @@ public class Usuario {
         firebase.child("usuarios")
                 .child(this.getIdUsuario())
                 .setValue(this);
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
     }
 
     public String getTipo() { return tipo; }

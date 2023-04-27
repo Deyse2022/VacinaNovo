@@ -26,7 +26,7 @@ public class MeuPerfilIS extends AppCompatActivity {
     private DatabaseReference firebaseRef;
     private String idUsuarioLogado;
 
-    private EditText editNomeUsuario, editEmailUsuario,edittipo;
+    private EditText editNomeUsuario, editEmailUsuario,edittipo, editEndereco, editTelefone, editHorario ;
 
     Spinner editspinnerEstado, editspinnerMunicipio;
 
@@ -57,14 +57,17 @@ public class MeuPerfilIS extends AppCompatActivity {
         editspinnerEstado = findViewById(R.id.editspinnerEstado);
         editspinnerMunicipio = findViewById(R.id.editspinnerMunicipio);
         edittipo = findViewById(R.id.edittipo);
+        editEndereco = findViewById(R.id.editEndereco);
+        editTelefone = findViewById(R.id.editTelefone);
+        editHorario = findViewById(R.id.editHorario);
     }
 
     public void recuperarDadosUsuario(){
 
-        DatabaseReference usuarioRef = firebaseRef
+        DatabaseReference instsaudeRef = firebaseRef
                 .child("usuarios")
                 .child(idUsuarioLogado);
-        usuarioRef.addValueEventListener(new ValueEventListener() {
+        instsaudeRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -73,6 +76,9 @@ public class MeuPerfilIS extends AppCompatActivity {
                     editNomeUsuario.setText(usuario.getNome());
                     editEmailUsuario.setText(usuario.getEmail());
                     edittipo.setText(usuario.getTipo());
+                    editEndereco.setText(usuario.getEndereco());
+                    editTelefone.setText(usuario.getTelefone());
+                    editHorario.setText(usuario.getHorario());
 
                 }
 
@@ -96,6 +102,9 @@ public class MeuPerfilIS extends AppCompatActivity {
         String estado = editspinnerEstado.getSelectedItem().toString();
         String municipio = editspinnerMunicipio.getSelectedItem().toString();
         String tipo = edittipo.getText().toString();
+        String endereco = editEndereco.getText().toString();
+        String telefone = editTelefone.getText().toString();
+        String horario = editHorario.getText().toString();
 
         Usuario usuario = new Usuario();
         usuario.setIdUsuario(idUsuarioLogado);
@@ -104,6 +113,9 @@ public class MeuPerfilIS extends AppCompatActivity {
         usuario.setEstado(estado);
         usuario.setMunicipio(municipio);
         usuario.setTipo(tipo);
+        usuario.setEndereco(endereco);
+        usuario.setTelefone(telefone);
+        usuario.setHorario(horario);
         usuario.salvar();
         finish();
     }
@@ -113,18 +125,11 @@ public class MeuPerfilIS extends AppCompatActivity {
                 "SC", "PR", "RS"
         };
 
-        String[] perfis = new String[]{
-                "Pessoa", "Instituição de Saúde"
-        };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, estados);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         editspinnerEstado.setAdapter(adapter);
-
-        ArrayAdapter<String> adapterP = new ArrayAdapter<String>(
-                this, android.R.layout.simple_spinner_item, perfis);
-        adapterP.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 
 

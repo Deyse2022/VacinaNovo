@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent">
+
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -66,6 +73,54 @@
             android:padding="16dp" />
 
         <TextView
+            android:id="@+id/textEndereco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Endereço" />
+
+        <EditText
+            android:id="@+id/editEndereco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Informe seu endereço"
+            android:inputType="textPersonName"
+            android:padding="16dp" />
+
+        <TextView
+            android:id="@+id/textTelefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Telefone" />
+
+        <EditText
+            android:id="@+id/editTelefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Informe seu telefone"
+            android:inputType="phone"
+            android:padding="16dp" />
+
+        <TextView
+            android:id="@+id/textHorario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Horário de atendimento" />
+
+        <EditText
+            android:id="@+id/editHorario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Informe seu horário de atendimento"
+            android:inputType="textPersonName"
+            android:padding="16dp" />
+
+        <TextView
             android:id="@+id/textView25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -97,6 +152,7 @@
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:onClick="editUsuarioSalvar"
             android:padding="16dp"
             android:text="Salvar" />
@@ -113,3 +169,5 @@
 
 
 </LinearLayout>
+
+</ScrollView>
