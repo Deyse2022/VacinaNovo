@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/menuMeuPerfilIS"
-        android:title="Meu Perfil"
+        android:title="Configurações"
         app:showAsAction="never" />
     <item
         android:id="@+id/menuNotificaoes"

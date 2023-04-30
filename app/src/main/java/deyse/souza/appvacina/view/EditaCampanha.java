@@ -1,16 +1,15 @@
 package deyse.souza.appvacina.view;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
-import androidx.appcompat.widget.Toolbar;
-
-import android.hardware.camera2.CameraAccessException;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,6 +20,7 @@ import deyse.souza.appvacina.R;
 import deyse.souza.appvacina.config.ConfiguracaoFirebase;
 import deyse.souza.appvacina.helper.UsuarioFirebase;
 import deyse.souza.appvacina.model.Campanha;
+import deyse.souza.appvacina.model.CampanhaUsuario;
 
 public class EditaCampanha extends AppCompatActivity {
 
@@ -58,6 +58,8 @@ public class EditaCampanha extends AppCompatActivity {
         inicializarComponentes();
 
         recuperarCampanhas();
+
+        recuperarCampanhasUsuario();
 
 
     }
@@ -120,17 +122,55 @@ public class EditaCampanha extends AppCompatActivity {
 
         Campanha campanha = new Campanha();
         campanha.setIdUsuario( idUsuarioLogado);
+        campanha.setIdCampanha(idCampanhaSel);
         campanha.setNome(nome);
         campanha.setDtinicio(dtinicio);
         campanha.setDtfim(dtfim);
         campanha.setDadosad(infoad);
         campanha.setStatus(verificaStatusCampanha());
         campanha.salvar();
+
+        CampanhaUsuario campanhaUsuario = new CampanhaUsuario();
+        campanhaUsuario.setNome(nome);
+        campanhaUsuario.setDtinicio(dtinicio);
+        campanhaUsuario.setDtfim(dtfim);
+        campanhaUsuario.setDadosad(infoad);
+        campanhaUsuario.setStatus(verificaStatusCampanha());
+        campanhaUsuario.salvar();
+
         finish();
     }
 
     public String verificaStatusCampanha(){
         return switchStatus.isChecked() ? "Ativa" : "Inativa" ;
+    }
+
+    private void recuperarCampanhasUsuario() {
+
+        DatabaseReference campanhasRef = firebaseRef
+                .child("campanhasusuario");
+
+
+        campanhasRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+
+                if(snapshot.getValue() !=null){
+                    CampanhaUsuario campanhaUsuario= snapshot.getValue(CampanhaUsuario.class);
+                    editNomeCampanha.setText(campanhaUsuario.getNome());
+                    editDtinicioC.setText(campanhaUsuario.getDtinicio());
+                    editDtFim.setText(campanhaUsuario.getDtfim());
+                    editInfoad.setText(campanhaUsuario.getDadosad());
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
 

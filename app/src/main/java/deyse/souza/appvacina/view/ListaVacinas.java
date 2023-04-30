@@ -1,16 +1,7 @@
 package deyse.souza.appvacina.view;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -18,22 +9,26 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import deyse.souza.appvacina.R;
-import deyse.souza.appvacina.adapter.AdapterPessoas;
 import deyse.souza.appvacina.adapter.AdapterVacinas;
 import deyse.souza.appvacina.config.ConfiguracaoFirebase;
+import deyse.souza.appvacina.helper.DateCustom;
 import deyse.souza.appvacina.helper.UsuarioFirebase;
 import deyse.souza.appvacina.listener.RecyclerItemClickListener;
 import deyse.souza.appvacina.model.Pessoa;
@@ -128,7 +123,7 @@ public class ListaVacinas extends AppCompatActivity {
         builder.setMessage("Digite a data de aplicação");
 
         EditText editAplicacao = new EditText(this);
-        editAplicacao.setText("");
+        editAplicacao.setText(DateCustom.dataAtual());
 
         builder.setView(editAplicacao);
 

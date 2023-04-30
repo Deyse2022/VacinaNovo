@@ -3,6 +3,7 @@ package deyse.souza.appvacina.view;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -24,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import deyse.souza.appvacina.R;
 import deyse.souza.appvacina.config.ConfiguracaoFirebase;
@@ -36,6 +38,10 @@ public class CadastroUsuario extends AppCompatActivity {
     private SwitchCompat switchTipoUsuario;
     Spinner spinnerEstado, spinnerMunicipio;
     private FirebaseAuth autenticacao;
+
+    private String tokenUsuario;
+
+    private String municipioTopics;
 
 
     @SuppressLint("MissingInflatedId")
@@ -51,9 +57,11 @@ public class CadastroUsuario extends AppCompatActivity {
         spinnerMunicipio = findViewById(R.id.spinnerMunicipio);
         switchTipoUsuario = findViewById(R.id.switchTipoUsuario);
 
+        FirebaseMessaging.getInstance().subscribeToTopic(municipioTopics);
 
         carregarDadosSpinner();
 
+        recuperarToken();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Vacina+");
@@ -82,8 +90,12 @@ public class CadastroUsuario extends AppCompatActivity {
                     usuario.setTipo( verificaTipoUsuario() );
                     usuario.setEstado(textoEstado);
                     usuario.setMunicipio(textoMunicipio);
+                    usuario.setChavetoken(tokenUsuario);
+
 
                     cadastrarUsuario(usuario);
+
+                    municipioTopics = usuario.getMunicipio();
 
 
                 } else {
@@ -244,5 +256,27 @@ public class CadastroUsuario extends AppCompatActivity {
 
         return super.onCreateOptionsMenu(menu);
     }
+
+    public void recuperarToken(){
+
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+
+                        if ( !task.isSuccessful() ){
+                            return;
+                        }
+
+                        tokenUsuario = task.getResult();
+
+                        Log.i("Token", tokenUsuario);
+
+                    }
+                });
+
+    }
+
+
 
 }

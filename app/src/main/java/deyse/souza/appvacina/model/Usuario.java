@@ -21,6 +21,10 @@ public class Usuario {
 
     private String horario;
 
+    private String chavetoken;
+
+
+
 
     public Usuario() {
 
@@ -31,6 +35,16 @@ public class Usuario {
         firebase.child("usuarios")
                 .child(this.getIdUsuario())
                 .setValue(this);
+    }
+
+
+
+    public String getChavetoken() {
+        return chavetoken;
+    }
+
+    public void setChavetoken(String chavetoken) {
+        this.chavetoken = chavetoken;
     }
 
     public String getEndereco() {

@@ -22,6 +22,12 @@ public class Campanha implements Serializable {
 
     private String status;
 
+    private String endereço;
+
+    private String telefone;
+
+    private String hratend;
+
     public Campanha() {
 
         DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
@@ -39,6 +45,30 @@ public class Campanha implements Serializable {
                 .child(getIdUsuario())
                 .child(getIdCampanha());
         pessoaRef.setValue(this);
+    }
+
+    public String getEndereço() {
+        return endereço;
+    }
+
+    public void setEndereço(String endereço) {
+        this.endereço = endereço;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getHratend() {
+        return hratend;
+    }
+
+    public void setHratend(String hratend) {
+        this.hratend = hratend;
     }
 
     public String getStatus() {
