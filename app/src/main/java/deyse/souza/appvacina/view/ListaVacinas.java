@@ -135,6 +135,7 @@ public class ListaVacinas extends AppCompatActivity {
 
                 String aplicacao = editAplicacao.getText().toString();
 
+
                 Vacina vacinaselecionada = vacinas.get(posicao);
                 vacinaselecionada.setDtaplicacao(aplicacao);
                 vacinaselecionada.atualizarAplicacao();

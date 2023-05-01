@@ -75,11 +75,11 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Informe a data de inicio"
-            android:inputType="textPersonName"
+            android:inputType="date"
             android:padding="16dp"
             app:mask=" __/__/____"
             app:maskCharacter="_"
-            app:maskStyle="completable"/>
+            app:maskStyle="completable" />
 
 
         <Button

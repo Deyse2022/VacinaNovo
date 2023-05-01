@@ -242,6 +242,8 @@ public class CadastroUsuario extends AppCompatActivity {
     }
     public void abrirTelaPrincipalI () {
         if(verificaStatusUsuario().equals("A")){
+            Toast.makeText(getApplicationContext(), "Complete seu cadastro na opção Configurações!",
+                    Toast.LENGTH_LONG).show();
             startActivity(new Intent(this, MainInstSaude.class));
         }
         else{
