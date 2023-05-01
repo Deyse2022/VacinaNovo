@@ -2,8 +2,7 @@ package deyse.souza.appvacina.helper;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Base64;
-import android.util.Log;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -45,11 +44,17 @@ public class UsuarioFirebase {
                     Usuario usuario = dataSnapshot.getValue( Usuario.class );
 
                     String tipoUsuario = usuario.getTipo();
+                    String statusUsuario = usuario.getStatus();
 
-                    if( tipoUsuario.equals("IS") ){
-                        Intent i = new Intent(activity, MainInstSaude.class);
-                        activity.startActivity(i);
-                    }else {
+                    if( tipoUsuario.equals("IS")  ){
+                        if(statusUsuario.equals("A")) {
+                            Intent i = new Intent(activity, MainInstSaude.class);
+                            activity.startActivity(i);
+                        }else{
+                            Toast.makeText(activity.getApplicationContext(), "Contate o Administrador para Ativar o cadastro!",
+                                    Toast.LENGTH_LONG).show();
+                            }
+                    }else{
                         Intent i = new Intent(activity, MainPessoa.class);
                         activity.startActivity(i);
                     }

@@ -23,7 +23,7 @@ public class Usuario {
 
     private String chavetoken;
 
-
+    private String status;
 
 
     public Usuario() {
@@ -37,7 +37,13 @@ public class Usuario {
                 .setValue(this);
     }
 
+    public String getStatus() {
+        return status;
+    }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getChavetoken() {
         return chavetoken;

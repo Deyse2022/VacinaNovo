@@ -64,14 +64,17 @@
             android:text="Data de inicio"
             android:textStyle="bold"/>
 
-        <EditText
+        <com.santalu.maskara.widget.MaskEditText
             android:id="@+id/editDtinicioC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Informe a data de inicio"
-            android:inputType="text"
-            android:padding="16dp" />
+            android:inputType="date"
+            android:padding="16dp"
+            app:mask=" __/__/____"
+            app:maskCharacter="_"
+            app:maskStyle="completable" />
 
 
         <TextView
@@ -82,14 +85,17 @@
             android:text="Data de fim"
             android:textStyle="bold"/>
 
-        <EditText
+        <com.santalu.maskara.widget.MaskEditText
             android:id="@+id/editDtFim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Informe a data de fim"
-            android:inputType="text"
-            android:padding="16dp" />
+            android:inputType="date"
+            android:padding="16dp"
+            app:mask=" __/__/____"
+            app:maskCharacter="_"
+            app:maskStyle="completable" />
 
         <TextView
             android:id="@+id/textInfo"

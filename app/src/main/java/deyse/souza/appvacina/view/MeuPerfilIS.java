@@ -1,15 +1,15 @@
 package deyse.souza.appvacina.view;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -106,6 +106,7 @@ public class MeuPerfilIS extends AppCompatActivity {
         String telefone = editTelefone.getText().toString();
         String horario = editHorario.getText().toString();
 
+
         Usuario usuario = new Usuario();
         usuario.setIdUsuario(idUsuarioLogado);
         usuario.setNome(nome);
@@ -116,6 +117,7 @@ public class MeuPerfilIS extends AppCompatActivity {
         usuario.setEndereco(endereco);
         usuario.setTelefone(telefone);
         usuario.setHorario(horario);
+        usuario.setStatus("A");
         usuario.salvar();
         finish();
     }

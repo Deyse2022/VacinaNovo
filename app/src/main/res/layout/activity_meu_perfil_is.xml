@@ -95,14 +95,17 @@
             android:padding="16dp"
             android:text="Telefone" />
 
-        <EditText
+        <com.santalu.maskara.widget.MaskEditText
             android:id="@+id/editTelefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Informe seu telefone"
             android:inputType="phone"
-            android:padding="16dp" />
+            android:padding="16dp"
+            app:mask=" (__) _________"
+            app:maskCharacter="_"
+            app:maskStyle="completable" />
 
         <TextView
             android:id="@+id/textHorario"
@@ -111,14 +114,17 @@
             android:padding="16dp"
             android:text="Horário de atendimento" />
 
-        <EditText
+        <com.santalu.maskara.widget.MaskEditText
             android:id="@+id/editHorario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Informe seu horário de atendimento"
-            android:inputType="textPersonName"
-            android:padding="16dp" />
+            android:inputType="number"
+            android:padding="16dp"
+            app:mask="__:__ - __:__"
+            app:maskCharacter="_"
+            app:maskStyle="completable" />
 
         <TextView
             android:id="@+id/textView25"

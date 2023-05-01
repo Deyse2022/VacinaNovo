@@ -49,7 +49,7 @@ public class ListaVacinas extends AppCompatActivity {
 
     private String idUsuarioLogado;
 
-    private String idPessoaSel;
+    private String idPessoaSel, datansPessoaSel;
 
     private Vacina vacina;
 
@@ -72,6 +72,7 @@ public class ListaVacinas extends AppCompatActivity {
             pessoaSelecionada = (Pessoa) bundle.getSerializable("pessoa");
             textNomePessoaVc.setText (pessoaSelecionada.getNome());
             idPessoaSel = pessoaSelecionada.getIdPessoaV();
+            datansPessoaSel = pessoaSelecionada.getDtnascimento();
 
         }
 
@@ -124,6 +125,7 @@ public class ListaVacinas extends AppCompatActivity {
 
         EditText editAplicacao = new EditText(this);
         editAplicacao.setText(DateCustom.dataAtual());
+
 
         builder.setView(editAplicacao);
 
@@ -226,13 +228,15 @@ public class ListaVacinas extends AppCompatActivity {
     }
 
 
+
+
     public void prepararVacinas(){
 
         vacina = new Vacina();
         vacina.setIdUsuario(idUsuarioLogado);
         vacina.setIdPessoaV(idPessoaSel);
         vacina.setNome("BCG");
-        vacina.setDtvencimento("10/10/2020");
+        vacina.setDtvencimento(datansPessoaSel);
         vacina.setDtaplicacao("");
         vacina.setStatus("Vencida");
         vacina.salvar();
@@ -242,7 +246,7 @@ public class ListaVacinas extends AppCompatActivity {
         vacina.setIdUsuario(idUsuarioLogado);
         vacina.setIdPessoaV(idPessoaSel);
         vacina.setNome("Hepatite B");
-        vacina.setDtvencimento("10/10/2020");
+        vacina.setDtvencimento(datansPessoaSel);
         vacina.setDtaplicacao("");
         vacina.setStatus("Vencida");
         vacina.salvar();
@@ -251,7 +255,7 @@ public class ListaVacinas extends AppCompatActivity {
         vacina.setIdUsuario(idUsuarioLogado);
         vacina.setIdPessoaV(idPessoaSel);
         vacina.setNome("Poliomielite 1,2,3 - 1º Dose");
-        vacina.setDtvencimento("10/10/2020");
+        vacina.setDtvencimento(datansPessoaSel);
         vacina.setDtaplicacao("");
         vacina.setStatus("Vencida");
         vacina.salvar();
@@ -260,16 +264,16 @@ public class ListaVacinas extends AppCompatActivity {
         vacina.setIdUsuario(idUsuarioLogado);
         vacina.setIdPessoaV(idPessoaSel);
         vacina.setNome("Poliomielite 1,2,3 - 2º Dose");
-        vacina.setDtvencimento("10/10/2020");
+        vacina.setDtvencimento("");
         vacina.setDtaplicacao("");
-        vacina.setStatus("Vencida");
+        vacina.setStatus("");
         vacina.salvar();
 
         vacina = new Vacina();
         vacina.setIdUsuario(idUsuarioLogado);
         vacina.setIdPessoaV(idPessoaSel);
         vacina.setNome("Febre Amarela");
-        vacina.setDtvencimento("10/10/2020");
+        vacina.setDtvencimento(datansPessoaSel);
         vacina.setDtaplicacao("");
         vacina.setStatus("Vencida");
         vacina.salvar();
@@ -278,16 +282,16 @@ public class ListaVacinas extends AppCompatActivity {
         vacina.setIdUsuario(idUsuarioLogado);
         vacina.setIdPessoaV(idPessoaSel);
         vacina.setNome("Febre Amarela - Reforço");
-        vacina.setDtvencimento("10/10/2020");
+        vacina.setDtvencimento("");
         vacina.setDtaplicacao("");
-        vacina.setStatus("Vencida");
+        vacina.setStatus("");
         vacina.salvar();
 
         vacina = new Vacina();
         vacina.setIdUsuario(idUsuarioLogado);
         vacina.setIdPessoaV(idPessoaSel);
         vacina.setNome("Hepatite A");
-        vacina.setDtvencimento("10/10/2020");
+        vacina.setDtvencimento(datansPessoaSel);
         vacina.setDtaplicacao("");
         vacina.setStatus("Vencida");
         vacina.salvar();
@@ -296,16 +300,16 @@ public class ListaVacinas extends AppCompatActivity {
         vacina.setIdUsuario(idUsuarioLogado);
         vacina.setIdPessoaV(idPessoaSel);
         vacina.setNome("Gripe");
-        vacina.setDtvencimento("10/10/2020");
+        vacina.setDtvencimento("");
         vacina.setDtaplicacao("");
-        vacina.setStatus("Vencida");
+        vacina.setStatus("");
         vacina.salvar();
 
         vacina = new Vacina();
         vacina.setIdUsuario(idUsuarioLogado);
         vacina.setIdPessoaV(idPessoaSel);
         vacina.setNome("Varicela");
-        vacina.setDtvencimento("10/10/2020");
+        vacina.setDtvencimento(datansPessoaSel);
         vacina.setDtaplicacao("");
         vacina.setStatus("Vencida");
         vacina.salvar();
@@ -313,6 +317,7 @@ public class ListaVacinas extends AppCompatActivity {
 
 
     }
+
 
 
 }

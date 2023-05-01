@@ -91,6 +91,7 @@ public class CadastroUsuario extends AppCompatActivity {
                     usuario.setEstado(textoEstado);
                     usuario.setMunicipio(textoMunicipio);
                     usuario.setChavetoken(tokenUsuario);
+                    usuario.setStatus(verificaStatusUsuario());
 
 
                     cadastrarUsuario(usuario);
@@ -240,7 +241,13 @@ public class CadastroUsuario extends AppCompatActivity {
 
     }
     public void abrirTelaPrincipalI () {
-        startActivity(new Intent(this, MainInstSaude.class));
+        if(verificaStatusUsuario().equals("A")){
+            startActivity(new Intent(this, MainInstSaude.class));
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "Contate o Administrador para Ativar o cadastro!",
+                    Toast.LENGTH_LONG).show();
+        }
 
     }
 
@@ -275,6 +282,10 @@ public class CadastroUsuario extends AppCompatActivity {
                     }
                 });
 
+    }
+
+    public String verificaStatusUsuario(){
+        return switchTipoUsuario.isChecked() ? "A" : "A" ;
     }
 
 

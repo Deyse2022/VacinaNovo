@@ -69,14 +69,17 @@
             android:padding="16dp"
             android:text="Data de inicio" />
 
-        <EditText
+        <com.santalu.maskara.widget.MaskEditText
             android:id="@+id/editdtInicio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Informe a data de inicio"
             android:inputType="textPersonName"
-            android:padding="16dp" />
+            android:padding="16dp"
+            app:mask=" __/__/____"
+            app:maskCharacter="_"
+            app:maskStyle="completable"/>
 
 
         <Button

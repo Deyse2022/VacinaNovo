@@ -58,14 +58,17 @@
             android:text="Data de nascimento"
             android:textStyle="bold"/>
 
-        <EditText
+        <com.santalu.maskara.widget.MaskEditText
             android:id="@+id/editDtNascimento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Informe a data de nascimento"
-            android:inputType="text"
-            android:padding="16dp" />
+            android:inputType="date"
+            android:padding="16dp"
+            app:mask=" __/__/____"
+            app:maskCharacter="_"
+            app:maskStyle="completable" />
 
         <Button
             android:id="@+id/button2"
