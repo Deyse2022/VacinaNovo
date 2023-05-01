@@ -20,7 +20,6 @@ import deyse.souza.appvacina.R;
 import deyse.souza.appvacina.config.ConfiguracaoFirebase;
 import deyse.souza.appvacina.helper.UsuarioFirebase;
 import deyse.souza.appvacina.model.Campanha;
-import deyse.souza.appvacina.model.CampanhaUsuario;
 
 public class EditaCampanha extends AppCompatActivity {
 
@@ -59,7 +58,7 @@ public class EditaCampanha extends AppCompatActivity {
 
         recuperarCampanhas();
 
-        recuperarCampanhasUsuario();
+        /*recuperarCampanhasUsuario();*/
 
 
     }
@@ -130,13 +129,13 @@ public class EditaCampanha extends AppCompatActivity {
         campanha.setStatus(verificaStatusCampanha());
         campanha.salvar();
 
-        CampanhaUsuario campanhaUsuario = new CampanhaUsuario();
+        /*CampanhaUsuario campanhaUsuario = new CampanhaUsuario();
         campanhaUsuario.setNome(nome);
         campanhaUsuario.setDtinicio(dtinicio);
         campanhaUsuario.setDtfim(dtfim);
         campanhaUsuario.setDadosad(infoad);
         campanhaUsuario.setStatus(verificaStatusCampanha());
-        campanhaUsuario.salvar();
+        campanhaUsuario.salvar();*/
 
         finish();
     }
@@ -145,7 +144,7 @@ public class EditaCampanha extends AppCompatActivity {
         return switchStatus.isChecked() ? "Ativa" : "Inativa" ;
     }
 
-    private void recuperarCampanhasUsuario() {
+    /*private void recuperarCampanhasUsuario() {
 
         DatabaseReference campanhasRef = firebaseRef
                 .child("campanhasusuario");
@@ -171,7 +170,7 @@ public class EditaCampanha extends AppCompatActivity {
 
             }
         });
-    }
+    }*/
 
 
 }

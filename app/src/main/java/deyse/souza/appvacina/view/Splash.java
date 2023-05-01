@@ -6,14 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import deyse.souza.appvacina.R;
-import deyse.souza.appvacina.api.AppUtil;
 import deyse.souza.appvacina.config.ConfiguracaoFirebase;
 
 

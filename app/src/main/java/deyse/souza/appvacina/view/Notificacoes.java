@@ -19,7 +19,6 @@ import com.google.firebase.database.ValueEventListener;
 import deyse.souza.appvacina.R;
 import deyse.souza.appvacina.api.NotificacaoService;
 import deyse.souza.appvacina.config.ConfiguracaoFirebase;
-import deyse.souza.appvacina.helper.DateCustom;
 import deyse.souza.appvacina.helper.UsuarioFirebase;
 import deyse.souza.appvacina.model.Notificaca;
 import deyse.souza.appvacina.model.Notificacao;
@@ -96,7 +95,7 @@ public class Notificacoes extends AppCompatActivity {
         notificacao.setIdUsuario(idUsuarioLogado);
         notificacao.setTplembrete(tplembrete);
         notificacao.setIntervalo(intervalo);
-        notificacao.setDtinicio(DateCustom.dataAtual());
+        notificacao.setDtinicio(dtinicio);
         notificacao.salvar();
         finish();
 
