@@ -9,9 +9,10 @@ import retrofit2.http.POST;
 public interface NotificacaoService {
 
     @Headers({
-            "Authorization:key=AAAALXNtCpQ:APA91bEZg1sKqeOSktjzIJQ3o54DCJSr8Sqp8L2RsqMPPkEbWgcdupHRmYkyhiUNICaPH52_nJTp2dsh0dQvz-4_nmdec3RccInuJcWfy9fSTgumcHQR6iy4oRwkm6Bj0XzA6Ne9SAcz",
+            "Authorization:key=",
             "Content-Type:application/json"
     })
+//a chave do servidor deve ser solicitada ao desenvolvedor do sistema
 
     @POST("send")
     Call<NotificacaoDados> salvarNotificacao(@Body NotificacaoDados notificacaoDados);

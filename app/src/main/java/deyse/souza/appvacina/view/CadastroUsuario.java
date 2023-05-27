@@ -287,7 +287,7 @@ public class CadastroUsuario extends AppCompatActivity {
     }
 
     public String verificaStatusUsuario(){
-        return switchTipoUsuario.isChecked() ? "A" : "A" ;
+        return switchTipoUsuario.isChecked() ? "I" : "A" ;
     }
 
 
